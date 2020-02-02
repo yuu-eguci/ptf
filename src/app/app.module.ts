@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { EngineeringPageComponent } from './engineering-page/engineering-page.component';
 import { ArtworksPageComponent } from './artworks-page/artworks-page.component';
 import { OldPtfPageComponent } from './old-ptf-page/old-ptf-page.component';
+import { HeroAreaComponent } from './hero-area/hero-area.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EngineeringPageComponent,
     ArtworksPageComponent,
-    OldPtfPageComponent
+    OldPtfPageComponent,
+    HeroAreaComponent
   ],
   imports: [
     BrowserModule,
