@@ -21,6 +21,7 @@
     "@angular/router": "~8.2.14",
     "@popperjs/core": "^2.0.4",
     "angular-cli-ghpages": "^0.6.2",
+    "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "jquery-countdown": "^2.2.0",
     "jquery-waypoints": "^2.0.5",
