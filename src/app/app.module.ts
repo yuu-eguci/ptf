@@ -8,6 +8,7 @@ import { ArtworksPageComponent } from './artworks-page/artworks-page.component';
 import { OldPtfPageComponent } from './old-ptf-page/old-ptf-page.component';
 import { HeroAreaComponent } from './hero-area/hero-area.component';
 import { SingleGalleryItemComponent } from './single-gallery-item/single-gallery-item.component';
+import { ProgressComponent } from './progress/progress.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SingleGalleryItemComponent } from './single-gallery-item/single-gallery
     ArtworksPageComponent,
     OldPtfPageComponent,
     HeroAreaComponent,
-    SingleGalleryItemComponent
+    SingleGalleryItemComponent,
+    ProgressComponent
   ],
   imports: [
     BrowserModule,
