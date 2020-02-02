@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-progress',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./progress.component.sass']
 })
 export class ProgressComponent implements OnInit {
+
+  @Input() bgType: string = '';
+  @Input() value: string = '';
+  @Input() name: string = '';
 
   constructor() { }
 
