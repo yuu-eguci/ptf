@@ -10,6 +10,7 @@ import { HeroAreaComponent } from './hero-area/hero-area.component';
 import { SingleGalleryItemComponent } from './single-gallery-item/single-gallery-item.component';
 import { ProgressComponent } from './progress/progress.component';
 import { AuthorAreaComponent } from './author-area/author-area.component';
+import { HeaderAreaComponent } from './header-area/header-area.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AuthorAreaComponent } from './author-area/author-area.component';
     HeroAreaComponent,
     SingleGalleryItemComponent,
     ProgressComponent,
-    AuthorAreaComponent
+    AuthorAreaComponent,
+    HeaderAreaComponent
   ],
   imports: [
     BrowserModule,
