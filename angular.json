@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/alime.css",
               "src/styles.sass"
             ],
             "scripts": [
