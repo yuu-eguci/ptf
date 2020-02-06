@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-index-item',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexItemComponent implements OnInit {
 
-  constructor() { }
+  @Input() contentTitle: string = '';
+  @Input() contentDescription: string = '';
+  @Input() contentUrl: string = '';
+  @Input() thumbnailUrl: string = '';
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  goToContentPage() {
+    // Doing page transition like below in SPA system.
+    this.router.navigateByUrl(`/${this.contentUrl}`);
   }
 
 }
