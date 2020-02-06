@@ -13,6 +13,7 @@ import { AuthorAreaComponent } from './author-area/author-area.component';
 import { HeaderAreaComponent } from './header-area/header-area.component';
 import { IndexPageComponent } from './index-page/index-page.component';
 import { IndexItemComponent } from './index-item/index-item.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { IndexItemComponent } from './index-item/index-item.component';
     AuthorAreaComponent,
     HeaderAreaComponent,
     IndexPageComponent,
-    IndexItemComponent
+    IndexItemComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
