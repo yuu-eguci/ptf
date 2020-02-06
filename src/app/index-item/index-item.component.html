@@ -1,0 +1,18 @@
+<div (click)="goToContentPage()"
+     class="single-post-area wow fadeInUpBig"
+     style="cursor: pointer;"
+     data-wow-delay="100ms">
+  <a href="#" class="post-thumbnail"><img src="{{thumbnailUrl}}" alt=""></a>
+  <div class="post-content" style="top: 30px;">
+    <h2 (click)="goToContentPage()"
+        class="post-title"
+        style="font-size: xx-large;">
+      {{contentTitle}}
+    </h2>
+    <div class="post-meta">
+      <p class="text-white">
+        {{contentDescription}}
+      </p>
+    </div>
+  </div>
+</div>

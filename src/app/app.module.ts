@@ -11,6 +11,8 @@ import { SingleGalleryItemComponent } from './single-gallery-item/single-gallery
 import { ProgressComponent } from './progress/progress.component';
 import { AuthorAreaComponent } from './author-area/author-area.component';
 import { HeaderAreaComponent } from './header-area/header-area.component';
+import { IndexPageComponent } from './index-page/index-page.component';
+import { IndexItemComponent } from './index-item/index-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HeaderAreaComponent } from './header-area/header-area.component';
     SingleGalleryItemComponent,
     ProgressComponent,
     AuthorAreaComponent,
-    HeaderAreaComponent
+    HeaderAreaComponent,
+    IndexPageComponent,
+    IndexItemComponent
   ],
   imports: [
     BrowserModule,
