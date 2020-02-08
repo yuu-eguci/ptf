@@ -1,0 +1,17 @@
+<div (click)="goToPage()"
+     class="single-post-area"
+     style="cursor: pointer;">
+  <a href="#" class="post-thumbnail"><img src="{{thumbnailUrl}}" alt=""></a>
+  <a *ngIf="this.tag1" class="btn post-category">{{tag1}}</a>
+  <a *ngIf="this.tag2" class="btn post-category" style="top: 45px;">{{tag2}}</a>
+  <div class="post-content"  style="top: 60px;">
+    <h3 (click)="goToPage()" class="post-title" style="font-size: xx-large;">
+      {{projectTitle}}
+    </h3>
+    <div class="post-meta">
+      <p class="text-white">
+        {{projectDescription}}
+      </p>
+    </div>
+  </div>
+</div>

@@ -983,9 +983,10 @@ input:required {
         .breadcrumb-content .breadcrumb .breadcrumb-item a:hover, .breadcrumb-content .breadcrumb .breadcrumb-item a:focus {
           color: #fc6060; }
     .breadcrumb-content .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
-      content: '\f105';
+      content: '\f054';
       color: #ffffff;
-      font-family: "FontAwesome"; }
+      font-weight: 900;
+      font-family: "Font Awesome 5 Free"; }
 
 .breadcrumb-area.blog {
   height: 550px; }
