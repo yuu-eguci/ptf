@@ -14,6 +14,7 @@ import { HeaderAreaComponent } from './header-area/header-area.component';
 import { IndexPageComponent } from './index-page/index-page.component';
 import { IndexItemComponent } from './index-item/index-item.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     HeaderAreaComponent,
     IndexPageComponent,
     IndexItemComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
