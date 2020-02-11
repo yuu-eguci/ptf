@@ -12,27 +12,28 @@
         </div>
       </div>
     </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-10">
+        <div class="blog-details-text">
+          <p>
+            The life that I sleep outside.
+            It's okay even being caught in the shower and exposed to the sun.
+            All creatures on the earth do so.
+            Take a look anyways!
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="alime-portfolio-area clearfix">
   <div class="container-fluid">
     <div class="row alime-portfolio">
-      <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
-        <div class="single-portfolio-content">
-          <img src="/assets/img/journey-img/0.jpg" alt="">
-          <div class="hover-content">
-            <a href="/assets/img/journey-img/0.jpg" class="portfolio-img">+</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
-        <div class="single-portfolio-content">
-          <img src="/assets/img/journey-img/1.jpg" alt="">
-          <div class="hover-content">
-            <a href="/assets/img/journey-img/1.jpg" class="portfolio-img">+</a>
-          </div>
-        </div>
+      <div *ngFor="let _ of this.galleryItemLength; let index=index;"
+        class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
+        <app-gallery-item imgUrl="/assets/img/journey-img/{{index}}.jpg"></app-gallery-item>
       </div>
     </div>
   </div>
