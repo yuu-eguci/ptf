@@ -9,7 +9,13 @@ import 'magnific-popup';
 })
 export class ArtworksPageComponent implements OnInit {
 
-  constructor() { }
+  // The array that has the galleryItem number of elements.
+  galleryItemLength: Array<number> = [];
+
+  constructor() {
+    // As ngFor variable, index will be used for values of 0 to n, fill can be used.
+    this.galleryItemLength = new Array(55).fill(null);
+  }
 
   ngOnInit() {
   }
