@@ -15,6 +15,7 @@ import { IndexItemComponent } from './index-item/index-item.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { ProjectComponent } from './project/project.component';
 import { GalleryItemComponent } from './gallery-item/gallery-item.component';
+import { JourneyPageComponent } from './journey-page/journey-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { GalleryItemComponent } from './gallery-item/gallery-item.component';
     IndexItemComponent,
     BreadcrumbComponent,
     ProjectComponent,
-    GalleryItemComponent
+    GalleryItemComponent,
+    JourneyPageComponent
   ],
   imports: [
     BrowserModule,
