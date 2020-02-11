@@ -7,7 +7,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeroAreaComponent implements OnInit {
 
-  // FIXME: Although I want to specify image path from parent component, 'sanitizing unsafe style value' error occurs.
   @Input() backgroundImagePath: string = '';
 
   constructor() { }
