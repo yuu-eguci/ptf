@@ -35,7 +35,6 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/imagesloaded/imagesloaded.pkgd.min.js",
               "src/assets/js/alime.bundle.js",
               "src/assets/js/active.js"
             ]

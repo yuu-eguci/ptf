@@ -47,43 +47,11 @@
 
 <div class="alime-portfolio-area section-padding-80 clearfix">
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-12">
-        <!-- Projects Menu -->
-        <div class="alime-projects-menu wow fadeInUp" data-wow-delay="100ms">
-          <div class="portfolio-menu text-center">
-            <button class="btn active" data-filter="*">All</button>
-            <button class="btn" data-filter=".human">Human</button>
-            <button class="btn" data-filter=".nature">Nature</button>
-            <button class="btn" data-filter=".country">Country</button>
-            <button class="btn" data-filter=".video">Video</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="row alime-portfolio">
-      <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
-        <div class="single-portfolio-content">
-          <img src="/assets/img/art-img/0.jpg" alt="">
-          <div class="hover-content">
-            <a href="/assets/img/art-img/0.jpg" class="portfolio-img">+</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
-        <div class="single-portfolio-content">
-          <img src="/assets/img/art-img/1.jpg" alt="">
-          <div class="hover-content">
-            <a href="/assets/img/art-img/1.jpg" class="portfolio-img">+</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="row">
-      <div class="col-12 text-center wow fadeInUp" data-wow-delay="800ms">
-        <a href="#" class="btn alime-btn btn-2 mt-15">View More</a>
+      <div *ngFor="let _ of this.galleryItemLength; let index=index;"
+           class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp"
+           data-wow-delay="100ms">
+        <app-gallery-item imgUrl="/assets/img/art-img/{{index}}.jpg"></app-gallery-item>
       </div>
     </div>
   </div>

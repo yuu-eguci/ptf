@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-gallery-item',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery-item.component.sass']
 })
 export class GalleryItemComponent implements OnInit {
+
+  @Input() imgUrl: string = '';
 
   constructor() { }
 
