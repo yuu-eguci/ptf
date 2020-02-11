@@ -14,7 +14,7 @@ export class ArtworksPageComponent implements OnInit {
 
   constructor() {
     // As ngFor variable, index will be used for values of 0 to n, fill can be used.
-    this.galleryItemLength = new Array(55).fill(null);
+    this.galleryItemLength = new Array(56).fill(null);
   }
 
   ngOnInit() {
