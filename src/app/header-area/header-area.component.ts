@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-area',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderAreaComponent implements OnInit {
 
-  constructor() { }
+  @Input() currentPage: string = '';
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  goToPage(destination: string) {
+    // Doing page transition like below in SPA system.
+    this.router.navigateByUrl(destination);
   }
 
 }
