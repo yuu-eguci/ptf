@@ -7,7 +7,6 @@ import { EngineeringPageComponent } from './engineering-page/engineering-page.co
 import { ArtworksPageComponent } from './artworks-page/artworks-page.component';
 import { OldPtfPageComponent } from './old-ptf-page/old-ptf-page.component';
 import { HeroAreaComponent } from './hero-area/hero-area.component';
-import { SingleGalleryItemComponent } from './single-gallery-item/single-gallery-item.component';
 import { ProgressComponent } from './progress/progress.component';
 import { AuthorAreaComponent } from './author-area/author-area.component';
 import { HeaderAreaComponent } from './header-area/header-area.component';
@@ -24,7 +23,6 @@ import { GalleryItemComponent } from './gallery-item/gallery-item.component';
     ArtworksPageComponent,
     OldPtfPageComponent,
     HeroAreaComponent,
-    SingleGalleryItemComponent,
     ProgressComponent,
     AuthorAreaComponent,
     HeaderAreaComponent,
