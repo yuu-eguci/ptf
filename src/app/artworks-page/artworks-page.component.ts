@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import 'magnific-popup';
 
 @Component({
   selector: 'app-artworks-page',
@@ -15,24 +16,15 @@ export class ArtworksPageComponent implements OnInit {
 
   ngAfterViewInit() {
 
-    // FIXME: jquery__WEBPACK_IMPORTED_MODULE_2__(...).imagesLoaded is not a function
-    // imagesLoaded exists at node_modules/imagesloaded/imagesloaded.pkgd.min.js
-    // and is PROBABLY read in angular.json, line 38.
-    // How can it be used here?
-    $('.alime-portfolio').imagesLoaded(function () {
-      $('.portfolio-menu').on('click', 'button', function () {
-        var filterValue = $(this).attr('data-filter');
-        $grid.isotope({
-          filter: filterValue
-        });
-      });
-      var $grid = $('.alime-portfolio').isotope({
-        itemSelector: '.single_gallery_item',
-        percentPosition: true,
-        masonry: {
-          columnWidth: '.single_gallery_item'
-        }
-      });
+    $('.portfolio-img').magnificPopup({
+      type: 'image',
+      gallery: {
+        enabled: true,
+        preload: [0, 2],
+        navigateByImgClick: true,
+        tPrev: 'Previous',
+        tNext: 'Next'
+      }
     });
   }
 
