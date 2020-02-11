@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EngineeringPageComponent } from './engineering-page/engineering-page.component';
 import { ArtworksPageComponent } from './artworks-page/artworks-page.component';
-import { OldPtfPageComponent } from './old-ptf-page/old-ptf-page.component';
 import { HeroAreaComponent } from './hero-area/hero-area.component';
 import { ProgressComponent } from './progress/progress.component';
 import { AuthorAreaComponent } from './author-area/author-area.component';
@@ -22,7 +21,6 @@ import { JourneyPageComponent } from './journey-page/journey-page.component';
     AppComponent,
     EngineeringPageComponent,
     ArtworksPageComponent,
-    OldPtfPageComponent,
     HeroAreaComponent,
     ProgressComponent,
     AuthorAreaComponent,
