@@ -15,6 +15,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { ProjectComponent } from './project/project.component';
 import { GalleryItemComponent } from './gallery-item/gallery-item.component';
 import { JourneyPageComponent } from './journey-page/journey-page.component';
+import { SkillBadgesComponent } from './skill-badges/skill-badges.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { JourneyPageComponent } from './journey-page/journey-page.component';
     BreadcrumbComponent,
     ProjectComponent,
     GalleryItemComponent,
-    JourneyPageComponent
+    JourneyPageComponent,
+    SkillBadgesComponent
   ],
   imports: [
     BrowserModule,
