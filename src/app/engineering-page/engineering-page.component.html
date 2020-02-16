@@ -15,11 +15,22 @@
     <div class="row justify-content-center">
       <div class="col-12 col-lg-10">
         <div class="blog-details-text">
-          <app-progress bgType="danger" name="Web" value="90%"></app-progress>
-          <app-progress bgType="info" name="Issue driven development" value="90%"></app-progress>
-          <app-progress bgType="success" name="Front-end, client" value="80%"></app-progress>
-          <app-progress bgType="warning" name="Back-end, server" value="90%"></app-progress>
-          <p>
+          <h5 class="mt-3">LANG BACK-END</h5>
+          <app-skill-badges [lis]="this.skillSetBackEnd"></app-skill-badges>
+          <h5 class="mt-3">LANG FRONT-END</h5>
+          <app-skill-badges [lis]="this.skillSetFrontEnd"></app-skill-badges>
+          <h5 class="mt-3">FRAMEWORK</h5>
+          <app-skill-badges [lis]="this.skillSetFramework"></app-skill-badges>
+          <h5 class="mt-3">PLATFORM</h5>
+          <app-skill-badges [lis]="this.skillSetPlatform"></app-skill-badges>
+          <h5 class="mt-3">DATABASE</h5>
+          <app-skill-badges [lis]="this.skillSetDatabase"></app-skill-badges>
+          <h5 class="mt-3">VERSIONING</h5>
+          <app-skill-badges [lis]="this.skillSetVersioning"></app-skill-badges>
+          <h5 class="mt-3">EDITOR</h5>
+          <app-skill-badges [lis]="this.skillSetEditor"></app-skill-badges>
+
+          <p class="mt-3">
             Have maintained, developed and launched multiple projects from scratch,
             carrying the development of its back-end and front-end codebases.
           </p>
