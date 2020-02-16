@@ -1,1 +1,9 @@
-<p>skill-badges works!</p>
+<ul class="skill-badges">
+  <ng-container *ngFor="let dic of this.lis;">
+    <li>
+      <a>
+        <i ng class="{{dic.iClass}}" [ngStyle]="{ 'color': dic.color, 'background-color': dic.backgroundColor}"></i> {{dic.skillTitle}}
+      </a>
+    </li>
+  </ng-container>
+</ul>

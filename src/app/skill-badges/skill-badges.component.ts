@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-skill-badges',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skill-badges.component.sass']
 })
 export class SkillBadgesComponent implements OnInit {
+
+  @Input() lis: {}[] = [];
 
   constructor() { }
 
