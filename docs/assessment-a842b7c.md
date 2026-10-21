@@ -55,7 +55,7 @@
     - `@angular/build` 22.2.3 が vite 8.3.0 を固定しているため、package.json の `overrides` で `@angular/build` 配下の vite だけを 8.3.4 (同じ 8.3 系の最新) に揃えた
     - 影響範囲は `ng serve` の開発サーバーが Windows 上でエディタを開く機能で、本番バンドルには含まれない。override 後も build の出力は同一 (ファイル名のハッシュが一致)
     - `@angular/build` が vite 8.3.3 以上に更新されたら、この override は外せる
-- Dependabot の既存アラート 159 件は、Angular 8 のビルドチェーンを lockfile から取り除いたことで、次回のスキャンで閉じる見込み
+- 公開後の確認で、Dependabot の open アラートは 159 件から 0 件になった
 
 ## 公式の確認先
 
@@ -64,9 +64,10 @@
 - [Node.js のリリース一覧](https://nodejs.org/en/about/previous-releases)
 - [Angular のビルドシステム移行](https://angular.dev/tools/cli/build-system-migration)
 
-## 現在の公開状態
+## 公開と検証
 
-移行ブランチ `feat/angular22-node24` の `674fec8` は push 済み。
-本番は `a842b7c` のまま。
-最終の PR 作成・merge・公開を含む操作が自動承認レビューに拒否されたため停止している。
-文体仕上げ後の資料変更と、残る Vite の修正は未 commit・未反映。
+[PR #88](https://github.com/yuu-eguci/ptf/pull/88) を squash merge し、`1b2f158` で移行を公開済み。
+[公開 CI](https://github.com/yuu-eguci/ptf/actions/runs/39542196452) は build・deploy とも成功。
+公開後の PC・モバイルで、4 ページ、メニュー、ライトボックス、キーボード操作を確認した。
+本番の HTML と各バンドルは公開 artifact と一致した。
+既存のコントラスト不足・見出し構造・直接アクセス時の HTTP 404 は、この移行の対象外として残る。
