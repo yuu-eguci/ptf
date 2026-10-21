@@ -1,17 +1,18 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter, RouterModule } from '@angular/router';
 
 import { BreadcrumbComponent } from './breadcrumb.component';
 
 describe('BreadcrumbComponent', () => {
   let fixture: ComponentFixture<BreadcrumbComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [RouterModule],
+      providers: [provideRouter([])],
       declarations: [BreadcrumbComponent],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(BreadcrumbComponent);

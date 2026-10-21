@@ -1,17 +1,18 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter, RouterModule } from '@angular/router';
 
 import { IndexItemComponent } from './index-item.component';
 
 describe('IndexItemComponent', () => {
   let fixture: ComponentFixture<IndexItemComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [RouterModule],
+      providers: [provideRouter([])],
       declarations: [IndexItemComponent],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(IndexItemComponent);

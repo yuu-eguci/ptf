@@ -1,14 +1,15 @@
-import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { TestBed } from '@angular/core/testing';
+import { provideRouter, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [RouterModule],
+      providers: [provideRouter([])],
       declarations: [AppComponent],
     }).compileComponents();
-  }));
+  });
 
   it('footer に現在の年を表示します', () => {
     const fixture = TestBed.createComponent(AppComponent);

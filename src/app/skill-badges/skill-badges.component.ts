@@ -10,7 +10,8 @@ export interface Skill {
 @Component({
   selector: 'app-skill-badges',
   templateUrl: './skill-badges.component.html',
-  styleUrls: ['./skill-badges.component.sass']
+  styleUrls: ['./skill-badges.component.sass'],
+  standalone: false
 })
 export class SkillBadgesComponent {
   @Input() lis: Skill[] = [];
