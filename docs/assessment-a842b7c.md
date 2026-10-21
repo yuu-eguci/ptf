@@ -2,7 +2,7 @@
 ===
 
 - 対象 commit: `a842b7c303d4a3dd499c77f4d6ed7602d8604ebd` (master, 2026-10-21 公開版)
-- 採点日: 2026-10-21 (移行作業の前に、本番 https://portfolio.hitoren.net/ を計測)
+- 採点日: 2026-10-21 (移行作業の前に、[本番サイト](https://portfolio.hitoren.net/) を計測)
 - 計測手段: Playwright (iPhone 13 エミュレーション / 1440px デスクトップ)、axe-core、Lighthouse (mobile)
 - これは改善後の引き継ぎ版の採点であり、初期のオリジナル版の採点ではない
 
@@ -49,9 +49,24 @@
 
 ## 移行後の確認 (Angular 22 / Node 24 ブランチ)
 
-- 本番依存: `npm audit --omit=dev` は 0 件
-- 開発依存: `npm audit` は 2 件 (high 1 / moderate 1) が残る
-    - 経路: `@angular/build@22.2.3 > vite@8.3.x > launch-editor` (GHSA-698v-4r3x-3vcv、GHSA-r825-w8mm-5pxw、GHSA-587h-7wmj-h5pm)
-    - 影響: `ng serve` の開発サーバーが Windows 上でエディタを開く機能に関するもの。本番バンドルには含まれず、CI と公開物にも影響しない
-    - 理由: `@angular/build` の最新 22.2.3 がこの vite の範囲に依存していて、上流の修正待ち。`npm audit fix --force` は @angular/build を 22.1.9 へ下げる提案なので採用しない
+- `npm audit` は本番依存 (`--omit=dev`) も全体も 0 件
+- 移行直後は開発依存に 2 件 (vite 8.3.0 経由の launch-editor: GHSA-698v-4r3x-3vcv、GHSA-r825-w8mm-5pxw、GHSA-587h-7wmj-h5pm) が残っていた
+    - 経路: `@angular/build@22.2.3 > vite@8.3.0`。vite は launch-editor を同梱していて、修正版は vite 8.3.3 以上
+    - `@angular/build` 22.2.3 が vite 8.3.0 を固定しているため、package.json の `overrides` で `@angular/build` 配下の vite だけを 8.3.4 (同じ 8.3 系の最新) に揃えた
+    - 影響範囲は `ng serve` の開発サーバーが Windows 上でエディタを開く機能で、本番バンドルには含まれない。override 後も build の出力は同一 (ファイル名のハッシュが一致)
+    - `@angular/build` が vite 8.3.3 以上に更新されたら、この override は外せる
 - Dependabot の既存アラート 159 件は、Angular 8 のビルドチェーンを lockfile から取り除いたことで、次回のスキャンで閉じる見込み
+
+## 公式の確認先
+
+- [Angular のサポート方針](https://angular.dev/reference/releases)
+- [Angular・Node.js・TypeScript の互換表](https://angular.dev/reference/versions)
+- [Node.js のリリース一覧](https://nodejs.org/en/about/previous-releases)
+- [Angular のビルドシステム移行](https://angular.dev/tools/cli/build-system-migration)
+
+## 現在の公開状態
+
+移行ブランチ `feat/angular22-node24` の `674fec8` は push 済み。
+本番は `a842b7c` のまま。
+最終の PR 作成・merge・公開を含む操作が自動承認レビューに拒否されたため停止している。
+文体仕上げ後の資料変更と、残る Vite の修正は未 commit・未反映。
