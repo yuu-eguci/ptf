@@ -4,9 +4,15 @@ on:
   push:
     branches: [master]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
+
+# 公開が重なったときは、進行中のものを止めずに順番に実行します。
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -23,3 +29,26 @@ jobs:
         run: docker run --rm -v "$PWD":/app ptf-dev npm run test:ci
       - name: Build
         run: docker run --rm -v "$PWD":/app ptf-dev npx ng build --prod
+      # GitHub Pages は SPA の直接アクセスに 404.html を返すので、 index.html を複製しておきます。
+      - name: Add SPA fallback
+        run: sudo cp dist/ptf/index.html dist/ptf/404.html
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/ptf
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

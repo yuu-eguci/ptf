@@ -43,16 +43,11 @@ docker run --rm -v "$PWD":/app ptf-dev npx ng build --prod
 
 ## 公開の流れ
 
-- master への push では公開されない。
-- `ng deploy` は本番 build を `angular-cli-ghpages` で gh-pages ブランチへ push。 GitHub Pages がその内容を公開する。
-- `angular-cli-ghpages` は `index.html` を `404.html` にもコピー。 `/engineering` などへの直接アクセスにも対応。
-
-```bash
-# build はコンテナ、 push はホストの git 認証を使う
-docker run --rm -v "$PWD":/app ptf-dev npx ng build --prod
-npx angular-cli-ghpages@0.6.2 --dir=dist/ptf --cname=portfolio.hitoren.net
-```
+- master への push で、 GitHub Actions (`.github/workflows/ci.yml`) が lint 、 test 、本番 build のあと GitHub Pages へ公開。
+- Actions 画面の `Run workflow` (workflow_dispatch) からも公開できる。
+- build 後に `index.html` を `404.html` にもコピー。 `/engineering` などへの直接アクセスにも対応。
+- カスタムドメイン `portfolio.hitoren.net` は GitHub Pages の設定側で持つ。
 
 ## CI
 
-- GitHub Actions (`.github/workflows/ci.yml`) で push と PR ごとに lint 、 test 、本番 build を実行。
+- GitHub Actions (`.github/workflows/ci.yml`) で push と PR ごとに lint 、 test 、本番 build を実行。公開は master への push と手動実行のときだけ。
