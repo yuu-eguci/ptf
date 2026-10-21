@@ -1,17 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hero-area',
   templateUrl: './hero-area.component.html',
-  styleUrls: ['./hero-area.component.sass']
+  styleUrls: ['./hero-area.component.sass'],
+  standalone: false
 })
-export class HeroAreaComponent implements OnInit {
+export class HeroAreaComponent {
 
   @Input() backgroundImagePath = '';
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

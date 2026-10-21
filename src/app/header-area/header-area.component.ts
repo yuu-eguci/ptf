@@ -6,7 +6,8 @@ const BREAKPOINT = 991;
 @Component({
   selector: 'app-header-area',
   templateUrl: './header-area.component.html',
-  styleUrls: ['./header-area.component.sass']
+  styleUrls: ['./header-area.component.sass'],
+  standalone: false
 })
 export class HeaderAreaComponent implements OnInit {
 

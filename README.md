@@ -5,17 +5,15 @@ Yuu Eguci の[ポートフォリオサイト](https://portfolio.hitoren.net/) �
 Angular の SPA を GitHub Pages で公開。
 
 - Docker: 対応!
-- Node.js: 12!
-- Angular: 8.2!
-- Linter: TSLint!
-- Test: Karma + Jasmine (Chromium headless)!
-
-Node.js 12 と Angular 8 はサポート終了済み。 `npm audit` で依存の脆弱性が報告される。
+- Node.js: 24!
+- Angular: 22!
+- Linter: ESLint (angular-eslint)!
+- Test: Vitest + jsdom!
 
 ## パッと実行してみたい
 
 ```bash
-# 開発用イメージ (Node 12 + Chromium) を作る
+# 開発用イメージ (Node 24) を作る
 docker build -t ptf-dev .
 
 # 依存を入れる
@@ -28,8 +26,8 @@ docker run --rm -it -p 4200:4200 -v "$PWD":/app ptf-dev npx ng serve --host 0.0.
 docker run --rm -v "$PWD":/app ptf-dev npm run test:ci
 docker run --rm -v "$PWD":/app ptf-dev npm run lint
 
-# 本番 build (dist/ptf に出力)
-docker run --rm -v "$PWD":/app ptf-dev npx ng build --prod
+# 本番 build (dist/ptf/browser に出力)
+docker run --rm -v "$PWD":/app ptf-dev npx ng build
 ```
 
 ## ページ構成
@@ -40,6 +38,10 @@ docker run --rm -v "$PWD":/app ptf-dev npx ng build --prod
 | `/engineering` | スキル、開発の進め方、プロジェクト一覧 |
 | `/artworks` | イラストや制作物のギャラリー |
 | `/journey` | 野宿旅の写真ギャラリー |
+
+## 採点と移行の記録
+
+- 移行前 (commit `a842b7c`) の採点と脆弱性の集計は [docs/assessment-a842b7c.md](docs/assessment-a842b7c.md) にある。
 
 ## 公開の流れ
 

@@ -1,15 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProjectComponent } from './project.component';
 
 describe('ProjectComponent', () => {
   let fixture: ComponentFixture<ProjectComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [ProjectComponent],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ProjectComponent);
@@ -32,7 +32,7 @@ describe('ProjectComponent', () => {
   });
 
   it('タグを表示します', () => {
-    const tags = Array.from(fixture.nativeElement.querySelectorAll('.post-category')).map((e: HTMLElement) => e.textContent.trim());
+    const tags = Array.from(fixture.nativeElement.querySelectorAll('.post-category') as NodeListOf<HTMLElement>).map(e => e.textContent.trim());
     expect(tags).toEqual(['ios', 'dropbox']);
   });
 

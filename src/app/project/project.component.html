@@ -1,8 +1,8 @@
 <a class="single-post-area" [href]="url" target="_blank" rel="noopener noreferrer">
   <span class="post-thumbnail"><img [src]="thumbnailUrl" alt="" loading="lazy" width="800" height="530"></span>
   <span class="post-tags">
-    <span *ngIf="tag1" class="post-category">{{ tag1 }}</span>
-    <span *ngIf="tag2" class="post-category">{{ tag2 }}</span>
+    @if (tag1) {<span class="post-category">{{ tag1 }}</span>}
+    @if (tag2) {<span class="post-category">{{ tag2 }}</span>}
   </span>
   <span class="post-content">
     <h3 class="post-title">{{ projectTitle }}</h3>

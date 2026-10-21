@@ -1,14 +1,15 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
+import { AfterViewInit, Component } from '@angular/core';
+import $ from 'jquery';
 import 'magnific-popup';
 import { Skill } from '../skill-badges/skill-badges.component';
 
 @Component({
   selector: 'app-engineering-page',
   templateUrl: './engineering-page.component.html',
-  styleUrls: ['./engineering-page.component.sass']
+  styleUrls: ['./engineering-page.component.sass'],
+  standalone: false
 })
-export class EngineeringPageComponent implements OnInit, AfterViewInit {
+export class EngineeringPageComponent implements AfterViewInit {
 
   skillSetFramework: Skill[] = [
     {
@@ -151,10 +152,6 @@ export class EngineeringPageComponent implements OnInit, AfterViewInit {
     },
   ];
 
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   ngAfterViewInit() {
 

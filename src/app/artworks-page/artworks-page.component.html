@@ -32,10 +32,11 @@
 <div class="alime-portfolio-area section-padding-80 clearfix">
   <div class="container-fluid">
     <div class="gallery-grid">
-      <div *ngFor="let _ of galleryItemLength; let index = index;"
-           class="gallery-grid-item">
-        <app-gallery-item [imgAlt]="'Artwork ' + (index + 1)" imgUrl="/assets/img/art-img/{{index}}.jpg"></app-gallery-item>
-      </div>
+      @for (_ of galleryItemLength; track $index) {
+        <div class="gallery-grid-item">
+          <app-gallery-item [imgAlt]="'Artwork ' + ($index + 1)" imgUrl="/assets/img/art-img/{{$index}}.jpg"></app-gallery-item>
+        </div>
+      }
     </div>
   </div>
 </div>

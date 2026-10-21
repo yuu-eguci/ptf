@@ -15,14 +15,16 @@
           <div class="classy-menu" id="site-menu" [class.menu-on]="menuOpen">
             <div class="classynav">
               <ul id="nav">
-                <li *ngFor="let item of navItems" [class.active]="currentPage === item.page">
-                  <a [routerLink]="item.path"
-                     [attr.aria-current]="currentPage === item.page ? 'page' : null"
-                     (click)="closeMenu()">
-                    <i [class]="item.icon" aria-hidden="true"></i>
-                    {{ item.label }}
-                  </a>
-                </li>
+                @for (item of navItems; track item.page) {
+                  <li [class.active]="currentPage === item.page">
+                    <a [routerLink]="item.path"
+                       [attr.aria-current]="currentPage === item.page ? 'page' : null"
+                       (click)="closeMenu()">
+                      <i [class]="item.icon" aria-hidden="true"></i>
+                      {{ item.label }}
+                    </a>
+                  </li>
+                }
               </ul>
             </div>
           </div>

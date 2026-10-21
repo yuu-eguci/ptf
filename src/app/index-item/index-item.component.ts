@@ -3,7 +3,8 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-index-item',
   templateUrl: './index-item.component.html',
-  styleUrls: ['./index-item.component.sass']
+  styleUrls: ['./index-item.component.sass'],
+  standalone: false
 })
 export class IndexItemComponent {
   @Input() contentTitle = '';
