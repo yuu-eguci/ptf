@@ -23,6 +23,12 @@ describe('GalleryItemComponent', () => {
     expect(img.getAttribute('loading')).toBe('lazy');
   });
 
+  it('読み込み前でも枠の高さが決まるよう、画像の寸法 (600x450) を指定します', () => {
+    const img: HTMLImageElement = fixture.nativeElement.querySelector('img');
+    expect(img.getAttribute('width')).toBe('600');
+    expect(img.getAttribute('height')).toBe('450');
+  });
+
   it('画像タイル全体が拡大表示リンクになり、読み上げ用のラベルを持ちます', () => {
     const link: HTMLAnchorElement = fixture.nativeElement.querySelector('a.portfolio-img');
     expect(link.getAttribute('href')).toBe('/assets/img/art-img/3.jpg');
