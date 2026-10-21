@@ -1,38 +1,19 @@
-<!-- Preloader -->
-<div id="preloader">
-  <div class="loader"></div>
-</div>
-<!-- /Preloader -->
+<a class="skip-link" href="#main">Skip to content</a>
 
-<router-outlet></router-outlet>
+<main id="main" tabindex="-1">
+  <router-outlet></router-outlet>
+</main>
 
-<!-- Footer Area Start -->
 <footer class="footer-area">
   <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="footer-content d-flex align-items-center justify-content-between">
-          <!-- Copywrite Text -->
-          <div class="copywrite-text">
-            <p>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved
-              | This site is made by Yuu Eguci
-              | Template: <a href="https://colorlib.com" target="_blank">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          </div>
-          <!-- Footer Logo -->
-          <div class="footer-logo">
-            <a href="#"></a>
-          </div>
-          <!-- Social Info -->
-          <div class="social-info">
-          </div>
-        </div>
-      </div>
+    <div class="footer-content d-flex flex-wrap align-items-center justify-content-between">
+      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      <p class="copywrite-text mb-0">
+        &copy; {{ year }} Yuu Eguci. All rights reserved.
+      </p>
+      <p class="copywrite-text mb-0">
+        Template: <a href="https://colorlib.com" target="_blank" rel="noopener noreferrer">Colorlib</a>
+      </p>
     </div>
   </div>
 </footer>
-<!-- Footer Area End -->

@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { EngineeringPageComponent } from './engineering-page/engineering-page.component';
 import { ArtworksPageComponent } from './artworks-page/artworks-page.component';
 import { HeroAreaComponent } from './hero-area/hero-area.component';
-import { ProgressComponent } from './progress/progress.component';
 import { AuthorAreaComponent } from './author-area/author-area.component';
 import { HeaderAreaComponent } from './header-area/header-area.component';
 import { IndexPageComponent } from './index-page/index-page.component';
@@ -23,7 +22,6 @@ import { SkillBadgesComponent } from './skill-badges/skill-badges.component';
     EngineeringPageComponent,
     ArtworksPageComponent,
     HeroAreaComponent,
-    ProgressComponent,
     AuthorAreaComponent,
     HeaderAreaComponent,
     IndexPageComponent,

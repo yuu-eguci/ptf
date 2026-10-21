@@ -3,23 +3,30 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { GalleryItemComponent } from './gallery-item.component';
 
 describe('GalleryItemComponent', () => {
-  let component: GalleryItemComponent;
   let fixture: ComponentFixture<GalleryItemComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GalleryItemComponent ]
-    })
-    .compileComponents();
+      declarations: [GalleryItemComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(GalleryItemComponent);
-    component = fixture.componentInstance;
+    Object.assign(fixture.componentInstance, { imgUrl: '/assets/img/art-img/3.jpg', imgAlt: 'Artwork 4' });
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('画像は alt 付きで遅延読み込みします', () => {
+    const img: HTMLImageElement = fixture.nativeElement.querySelector('img');
+    expect(img.getAttribute('alt')).toBe('Artwork 4');
+    expect(img.getAttribute('loading')).toBe('lazy');
+  });
+
+  it('画像タイル全体が拡大表示リンクになり、読み上げ用のラベルを持ちます', () => {
+    const link: HTMLAnchorElement = fixture.nativeElement.querySelector('a.portfolio-img');
+    expect(link.getAttribute('href')).toBe('/assets/img/art-img/3.jpg');
+    expect(link.querySelector('img')).not.toBeNull();
+    expect(link.getAttribute('aria-label')).toBe('Open Artwork 4');
   });
 });

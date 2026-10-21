@@ -1,17 +1,17 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+export interface Skill {
+  skillTitle: string;
+  iClass: string;
+  color: string;
+  backgroundColor: string;
+}
 
 @Component({
   selector: 'app-skill-badges',
   templateUrl: './skill-badges.component.html',
   styleUrls: ['./skill-badges.component.sass']
 })
-export class SkillBadgesComponent implements OnInit {
-
-  @Input() lis: {}[] = [];
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class SkillBadgesComponent {
+  @Input() lis: Skill[] = [];
 }

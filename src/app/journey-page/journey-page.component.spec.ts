@@ -1,25 +1,28 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { GalleryItemComponent } from '../gallery-item/gallery-item.component';
 
 import { JourneyPageComponent } from './journey-page.component';
 
 describe('JourneyPageComponent', () => {
-  let component: JourneyPageComponent;
   let fixture: ComponentFixture<JourneyPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ JourneyPageComponent ]
-    })
-    .compileComponents();
+      declarations: [JourneyPageComponent, GalleryItemComponent],
+      schemas: [NO_ERRORS_SCHEMA],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(JourneyPageComponent);
-    component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('全 20 枚の画像をギャラリーに並べます', () => {
+    const imgs: HTMLImageElement[] = Array.from(fixture.nativeElement.querySelectorAll('.gallery-grid img'));
+    expect(imgs.length).toBe(20);
+    expect(imgs[0].getAttribute('src')).toBe('/assets/img/journey-img/0.jpg');
+    expect(imgs[0].getAttribute('alt')).toBe('Journey photo 1');
   });
 });

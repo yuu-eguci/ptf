@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import 'magnific-popup';
 
@@ -7,7 +7,7 @@ import 'magnific-popup';
   templateUrl: './artworks-page.component.html',
   styleUrls: ['./artworks-page.component.sass']
 })
-export class ArtworksPageComponent implements OnInit {
+export class ArtworksPageComponent implements OnInit, AfterViewInit {
 
   // The array that has the galleryItem number of elements.
   galleryItemLength: Array<number> = [];

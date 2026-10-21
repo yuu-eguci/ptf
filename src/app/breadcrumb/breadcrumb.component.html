@@ -1,20 +1,20 @@
-<section class="breadcrumb-area bg-img bg-overlay jarallax"
+<section class="breadcrumb-area bg-img bg-overlay"
          [ngStyle]="{ 'background-image': 'url(' + backgroundImagePath + ')'}">
   <div class="container h-100">
     <div class="row h-100 align-items-center">
       <div class="col-12">
         <div class="breadcrumb-content text-center">
-          <h2 class="page-title">{{currentPageTitle}}</h2>
-          <nav aria-label="breadcrumb">
+          <h1 class="page-title">{{ currentPageTitle }}</h1>
+          <nav aria-label="Breadcrumb">
             <ol class="breadcrumb justify-content-center">
               <li class="breadcrumb-item">
-                <a (click)="goToIndexPage()">
-                  <i class="fas fa-home"></i>
+                <a routerLink="/">
+                  <i class="fas fa-home" aria-hidden="true"></i>
                   Index
                 </a>
               </li>
               <li class="breadcrumb-item active" aria-current="page">
-                {{currentPageTitle}}
+                {{ currentPageTitle }}
               </li>
             </ol>
           </nav>

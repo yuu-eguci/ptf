@@ -31,7 +31,6 @@ Last Update: Feb 22, 2019
 
 --------------------------------------------- */
 /* Import Fonts & All CSS */
-@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700");
 @import url(../../../node_modules/bootstrap/dist/css/bootstrap.min.css);
 @import url(../../../node_modules/animate.css/animate.min.css);
 @import url(./classy-nav.css);

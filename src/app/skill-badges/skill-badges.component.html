@@ -1,9 +1,6 @@
 <ul class="skill-badges">
-  <ng-container *ngFor="let dic of this.lis;">
-    <li>
-      <a>
-        <i ng class="{{dic.iClass}}" [ngStyle]="{ 'color': dic.color, 'background-color': dic.backgroundColor}"></i> {{dic.skillTitle}}
-      </a>
-    </li>
-  </ng-container>
+  <li *ngFor="let skill of lis">
+    <i [class]="skill.iClass" [ngStyle]="{ 'color': skill.color, 'background-color': skill.backgroundColor }" aria-hidden="true"></i>
+    {{ skill.skillTitle }}
+  </li>
 </ul>

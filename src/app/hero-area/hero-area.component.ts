@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeroAreaComponent implements OnInit {
 
-  @Input() backgroundImagePath: string = '';
+  @Input() backgroundImagePath = '';
 
   constructor() { }
 

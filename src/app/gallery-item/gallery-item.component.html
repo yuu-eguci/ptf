@@ -1,6 +1,4 @@
-<div class="single-portfolio-content">
-  <img src="{{imgUrl}}" alt="">
-  <div class="hover-content">
-    <a href="{{imgUrl}}" class="portfolio-img">+</a>
-  </div>
-</div>
+<a class="single-portfolio-content portfolio-img" [href]="imgUrl" [attr.aria-label]="'Open ' + imgAlt">
+  <img [src]="imgUrl" [alt]="imgAlt" loading="lazy" decoding="async">
+  <span class="hover-content" aria-hidden="true"><span class="zoom-icon">+</span></span>
+</a>

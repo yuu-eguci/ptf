@@ -16,12 +16,12 @@
       <div class="col-12 col-lg-10">
         <div class="blog-details-text">
           <p>
-            I draw with a ball-point pen.
-            Although had practiced water-color painting, I'm not so particular about coloring.
-            And I design mag coasters, stamps, ...
+            I draw with a ballpoint pen.
+            Although I have practiced watercolor painting, I'm not so particular about coloring.
+            I also design mug coasters, stamps and more.
           </p>
           <p>
-            Take a look anyways!
+            Take a look anyway!
           </p>
         </div>
       </div>
@@ -31,10 +31,10 @@
 
 <div class="alime-portfolio-area section-padding-80 clearfix">
   <div class="container-fluid">
-    <div class="row alime-portfolio">
-      <div *ngFor="let _ of this.galleryItemLength; let index=index;"
-           class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30">
-        <app-gallery-item imgUrl="/assets/img/art-img/{{index}}.jpg"></app-gallery-item>
+    <div class="gallery-grid">
+      <div *ngFor="let _ of galleryItemLength; let index = index;"
+           class="gallery-grid-item">
+        <app-gallery-item [imgAlt]="'Artwork ' + (index + 1)" imgUrl="/assets/img/art-img/{{index}}.jpg"></app-gallery-item>
       </div>
     </div>
   </div>

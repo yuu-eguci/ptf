@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import 'magnific-popup';
+import { Skill } from '../skill-badges/skill-badges.component';
 
 @Component({
   selector: 'app-engineering-page',
   templateUrl: './engineering-page.component.html',
   styleUrls: ['./engineering-page.component.sass']
 })
-export class EngineeringPageComponent implements OnInit {
+export class EngineeringPageComponent implements OnInit, AfterViewInit {
 
-  skillSetFramework: {}[] = [
+  skillSetFramework: Skill[] = [
     {
       skillTitle: 'Django',
       iClass: 'devicon-django-plain',
@@ -36,7 +37,7 @@ export class EngineeringPageComponent implements OnInit {
     },
   ];
 
-  skillSetDatabase: {}[] = [
+  skillSetDatabase: Skill[] = [
     {
       skillTitle: 'MySQL',
       iClass: 'devicon-mysql-plain',
@@ -51,7 +52,7 @@ export class EngineeringPageComponent implements OnInit {
     },
   ];
 
-  skillSetVersioning: {}[] = [
+  skillSetVersioning: Skill[] = [
     {
       skillTitle: 'Git',
       iClass: 'devicon-git-plain',
@@ -72,7 +73,7 @@ export class EngineeringPageComponent implements OnInit {
     },
   ];
 
-  skillSetEditor: {}[] = [
+  skillSetEditor: Skill[] = [
     {
       skillTitle: 'Visual Studio Code',
       iClass: 'devicon-visualstudio-plain',
@@ -87,7 +88,7 @@ export class EngineeringPageComponent implements OnInit {
     },
   ];
 
-  skillSetPlatform: {}[] = [
+  skillSetPlatform: Skill[] = [
     {
       skillTitle: 'heroku',
       iClass: 'devicon-heroku-original',
@@ -102,7 +103,7 @@ export class EngineeringPageComponent implements OnInit {
     },
   ];
 
-  skillSetFrontEnd: {}[] = [
+  skillSetFrontEnd: Skill[] = [
     {
       skillTitle: 'HTML',
       iClass: 'devicon-html5-plain',
@@ -129,7 +130,7 @@ export class EngineeringPageComponent implements OnInit {
     },
   ];
 
-  skillSetBackEnd: {}[] = [
+  skillSetBackEnd: Skill[] = [
     {
       skillTitle: 'Python',
       iClass: 'devicon-python-plain',

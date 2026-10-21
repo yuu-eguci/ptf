@@ -5,31 +5,31 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [RouterTestingModule],
+      declarations: [AppComponent],
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'ptf'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('ptf');
-  });
-
-  it('should render title', () => {
+  it('footer に現在の年を表示します', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('ptf app is running!');
+    const footer: HTMLElement = fixture.nativeElement.querySelector('footer');
+    expect(footer.textContent).toContain(`© ${new Date().getFullYear()}`);
+  });
+
+  it('本文へのスキップリンクを先頭に置きます', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const skip: HTMLAnchorElement = fixture.nativeElement.querySelector('a.skip-link');
+    expect(skip.getAttribute('href')).toBe('#main');
+    expect(fixture.nativeElement.querySelector('main#main')).not.toBeNull();
+  });
+
+  it('外部リンクは新しいタブで安全に開きます', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const external: HTMLAnchorElement = fixture.nativeElement.querySelector('footer a[href^="https://colorlib.com"]');
+    expect(external.target).toBe('_blank');
+    expect(external.rel).toContain('noopener');
   });
 });

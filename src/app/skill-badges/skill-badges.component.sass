@@ -1,33 +1,25 @@
 ul.skill-badges
   display: flex
   flex-wrap: wrap
-  margin-left: 0px
-  margin-bottom: -8px
+  gap: 8px
+  margin: 0 0 4px
+  padding: 0
   list-style: none
   li
-    display: flex
+    display: inline-flex
     align-items: center
-    -webkit-user-select: none
-    -moz-user-select: none
-    -ms-user-select: none
-    user-select: none
-    margin-right: 8px
-    margin-bottom: 8px
-    padding-right: 8px
-    position: relative
-  a
-    position: relative
-    padding-left: 35px
-    text-align: left
-    white-space: nowrap
+    gap: 8px
+    padding: 0 12px 0 0
+    font-size: 15px
+    font-weight: 500
+    line-height: 34px
+    color: #333
+    background: #f4f4f6
+    border-radius: 4px
     overflow: hidden
-    text-overflow: ellipsis
-    > :first-child
-      position: absolute
-      left: 0
-      top: 0
-      bottom: 0
-      width: 32px
+    white-space: nowrap
+    i
+      width: 34px
       line-height: 34px
       font-size: 1.2em
       text-align: center

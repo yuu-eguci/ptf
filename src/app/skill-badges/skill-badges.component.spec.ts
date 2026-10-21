@@ -3,23 +3,29 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SkillBadgesComponent } from './skill-badges.component';
 
 describe('SkillBadgesComponent', () => {
-  let component: SkillBadgesComponent;
   let fixture: ComponentFixture<SkillBadgesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SkillBadgesComponent ]
-    })
-    .compileComponents();
+      declarations: [SkillBadgesComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SkillBadgesComponent);
-    component = fixture.componentInstance;
+    fixture.componentInstance.lis = [
+      { skillTitle: 'Python', iClass: 'devicon-python-plain', color: '#fff', backgroundColor: '#0168b3' },
+    ];
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('スキル名を表示し、アイコンは読み上げ対象から外します', () => {
+    const li: HTMLElement = fixture.nativeElement.querySelector('li');
+    expect(li.textContent.trim()).toBe('Python');
+    expect(li.querySelector('i').getAttribute('aria-hidden')).toBe('true');
+  });
+
+  it('スキルはリンクではないので a 要素を使いません', () => {
+    expect(fixture.nativeElement.querySelector('a')).toBeNull();
   });
 });
